@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Recommend Board Game</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <li>
+      title: <%= @recommend_board_game.title %>
+    </li>
+          <li>
+        link: <%= @recommend_board_game.link %>
+      </li>
+      <li>
+        score: <%= @recommend_board_game.score %>
+      </li>
+      <li>
+        body: <%= @recommend_board_game.body %>
+      </li>
+      <li>
+        created_at: <%= @recommend_board_game.created_at %>
+      </li>
+  </tbody>
+
+  <a href='/recommend_board_games'>return to recommend_board_game home</a>
+</table>
+
+<br>
