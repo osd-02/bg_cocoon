@@ -13,8 +13,7 @@
     <% @recommend_board_games.each do |recommend_board_game| %>
       <li>
         title: 
-        <a href='/recommend_board_games/<%= recommend_board_game.id %>'>
-          <%= recommend_board_game.title %>
+        <%= link_to recommend_board_game.title, recommend_board_game %>
         </a>
       </li>
     <% end %>
