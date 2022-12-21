@@ -1,0 +1,2 @@
+class RecommendBoardGame < ApplicationRecord
+end
