@@ -1,0 +1,34 @@
+<%= form_with model: recommend_board_game do |form| %>
+  <div>
+    <%= form.label :title %> <br>
+    <%= form.text_field :title %>
+    <%= recommend_board_game.errors.full_messages_for(:title).each do |message| %>
+      <div><%= recommend_board_game.errors.full_messages_for(:title).message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :link %> <br>
+    <%= form.text_field :link %>
+    <%= recommend_board_game.errors.full_messages_for(:link).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :score %> <br>
+    <%= form.number_field :score %>
+    <%= recommend_board_game.errors.full_messages_for(:score).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :body %> <br>
+    <%= form.text_area :body %>
+    <%= recommend_board_game.errors.full_messages_for(:body).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

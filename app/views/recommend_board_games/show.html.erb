@@ -14,7 +14,7 @@
       title: <%= @recommend_board_game.title %>
     </li>
           <li>
-        link: <%= @recommend_board_game.link %>
+        link: <a href="<%= @recommend_board_game.link %>">link</a>
       </li>
       <li>
         score: <%= @recommend_board_game.score %>
@@ -27,6 +27,7 @@
       </li>
   </tbody>
 
+  <%= link_to "Edit Recommend Board Game", edit_recommend_board_game_path(@recommend_board_game) %> <br>
   <a href='/recommend_board_games'>return to recommend_board_game home</a>
 </table>
 
