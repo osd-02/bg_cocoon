@@ -27,7 +27,13 @@
       </li>
   </tbody>
 
-  <%= link_to "Edit", edit_recommend_board_game_path(@recommend_board_game) %> <br>
+  <h2>Reviews</h2>
+  <%= render @recommend_board_game.comment_to_recommends %>
+
+  <h2>Add a review</h2>
+  <%= render 'comment_to_recommends/form' %>
+  
+  <%= link_to "Edit", edit_recommend_board_game_path(@recommend_board_game) %> | 
   <%= link_to "Destory", recommend_board_game_path(@recommend_board_game), method: :delete , data: { confirm: "削除しますか？"} %> <br>
   <a href='/recommend_board_games'>return to recommend_board_game home</a>
 </table>

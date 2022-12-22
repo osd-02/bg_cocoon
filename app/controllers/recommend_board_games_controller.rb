@@ -5,6 +5,7 @@ class RecommendBoardGamesController < ApplicationController
 
   def show
     @recommend_board_game = RecommendBoardGame.find(params[:id])
+    
   end
 
   def new

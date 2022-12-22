@@ -1,0 +1,17 @@
+<%= form_with model: [ @recommend_board_game, @recommend_board_game.comment_to_recommends.build ] do |form| %>
+  <p>
+    <%= form.label :commenter %><br>
+    <%= form.text_field :commenter %>
+  </p>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.label :score %><br>
+    <%= form.number_field :score %>
+  </p>
+  <p>
+    <%= form.submit %><br>
+  </p>
+<% end %>
