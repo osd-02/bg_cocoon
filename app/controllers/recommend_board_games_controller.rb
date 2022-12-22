@@ -35,6 +35,13 @@ class RecommendBoardGamesController < ApplicationController
     end
   end
 
+  def destroy
+    @recommend_board_game = RecommendBoardGame.find(params[:id])
+    @recommend_board_game.destroy
+
+    redirect_to root_path, status: :see_other
+  end
+
   private
     def recommend_board_game_params
       params.require(:recommend_board_game).permit(:title, :link, :score, :body)

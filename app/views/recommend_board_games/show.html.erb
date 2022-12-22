@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Recommend Board Game</h1>
+<h1>Edit Recommend Board Game</h1>
 
 <table>
   <thead>
@@ -27,7 +27,8 @@
       </li>
   </tbody>
 
-  <%= link_to "Edit Recommend Board Game", edit_recommend_board_game_path(@recommend_board_game) %> <br>
+  <%= link_to "Edit", edit_recommend_board_game_path(@recommend_board_game) %> <br>
+  <%= link_to "Destory", recommend_board_game_path(@recommend_board_game), method: :delete , data: { confirm: "削除しますか？"} %> <br>
   <a href='/recommend_board_games'>return to recommend_board_game home</a>
 </table>
 
