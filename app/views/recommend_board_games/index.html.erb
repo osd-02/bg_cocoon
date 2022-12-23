@@ -2,6 +2,9 @@
 
 <h1>Recommend Board Games</h1>
 
+In this site, there are <%= RecommendBoardGame.public_count %> recommended board games!!!<br>
+
+
 <table>
   <thead>
     <tr>
@@ -11,11 +14,13 @@
 
   <tbody>
     <% @recommend_board_games.each do |recommend_board_game| %>
-      <li>
-        title: 
-        <%= link_to recommend_board_game.title, recommend_board_game %>
-        </a>
-      </li>
+      <% unless recommend_board_game.archived? %>
+        <li>
+          title: 
+          <%= link_to recommend_board_game.title, recommend_board_game %>
+          </a>
+        </li>
+      <% end %>
     <% end %>
   </tbody>
 </table>

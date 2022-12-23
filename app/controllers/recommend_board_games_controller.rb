@@ -5,7 +5,7 @@ class RecommendBoardGamesController < ApplicationController
 
   def show
     @recommend_board_game = RecommendBoardGame.find(params[:id])
-    
+
   end
 
   def new
@@ -13,7 +13,7 @@ class RecommendBoardGamesController < ApplicationController
   end
 
   def create
-    @recommend_board_game = RecommendBoardGame.new(title: "hoge", link: "hoge", score: 100, body: "hogehoge")
+    @recommend_board_game = RecommendBoardGame.new(recommend_board_game_params)
 
     if @recommend_board_game.save
       redirect_to @recommend_board_game
@@ -40,11 +40,11 @@ class RecommendBoardGamesController < ApplicationController
     @recommend_board_game = RecommendBoardGame.find(params[:id])
     @recommend_board_game.destroy
 
-    redirect_to root_path, status: :see_other
+    redirect_to recommend_board_games_path
   end
 
   private
     def recommend_board_game_params
-      params.require(:recommend_board_game).permit(:title, :link, :score, :body)
+      params.require(:recommend_board_game).permit(:title, :link, :score, :body, :status)
     end
 end

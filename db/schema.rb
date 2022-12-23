@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_22_145737) do
+ActiveRecord::Schema.define(version: 2022_12_23_163730) do
 
   create_table "comment_to_recommends", force: :cascade do |t|
     t.string "commenter"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2022_12_22_145737) do
     t.integer "recommend_board_game_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "status"
     t.index ["recommend_board_game_id"], name: "index_comment_to_recommends_on_recommend_board_game_id"
   end
 
@@ -29,6 +30,7 @@ ActiveRecord::Schema.define(version: 2022_12_22_145737) do
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "status"
   end
 
   add_foreign_key "comment_to_recommends", "recommend_board_games"

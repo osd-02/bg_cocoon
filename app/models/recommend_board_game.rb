@@ -1,5 +1,7 @@
 class RecommendBoardGame < ApplicationRecord
-  has_many :comment_to_recommends
+  include Status
+
+  has_many :comment_to_recommends, dependent: :destroy
 
   validates :title, presence: true
   validates :link, presence: true
