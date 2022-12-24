@@ -6,5 +6,5 @@
   <p><pre>&#009;<strong>Score:</strong><%= comment_to_recommend.score %></pre></p>
   <p><pre>&#009;<strong>Comment:</strong><%= comment_to_recommend.body %></pre></p>
 
-  <p> <%= link_to "delete comment", recommend_board_game_comment_to_recommend_path([@recommend_board_game, comment_to_recommend]), method: :delete, data: {confirm: '削除しますか？'} %>
+  <p> <%= link_to "delete comment", recommend_board_game_comment_to_recommend_path(@recommend_board_game, comment_to_recommend), method: :delete, data: {confirm: '削除しますか？'} %>
 <% end %>

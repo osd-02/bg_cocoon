@@ -1,4 +1,6 @@
 class CommentToRecommendsController < ApplicationController
+  http_basic_authenticate_with name: "osd", password: "rbg", except: [:index, :show]
+
   def create
     @recommend_board_game = RecommendBoardGame.find(params[:recommend_board_game_id])
     @comment_to_recommend = @recommend_board_game.comment_to_recommends.create(comment_to_recommend_params)
@@ -7,6 +9,7 @@ class CommentToRecommendsController < ApplicationController
 
   def destroy
     @recommend_board_game = RecommendBoardGame.find(params[:recommend_board_game_id])
+    # binding.pry
     @comment_to_recommend = @recommend_board_game.comment_to_recommends.find(params[:id])
     @comment_to_recommend.destroy
     p params[:recommend_board_game_id]

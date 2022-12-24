@@ -1,4 +1,6 @@
 class RecommendBoardGamesController < ApplicationController
+  http_basic_authenticate_with name: "osd", password: "rbg", except: [:index, :show]
+
   def index
     @recommend_board_games = RecommendBoardGame.all
   end
